@@ -44,7 +44,7 @@ The two packs reference each other through the `dependencies` array:
 - The BP's `dependencies` contains the RP's `header.uuid` (`b3a12422-a3b1-4919-acce-b0a858f90597`).
 - The RP's `dependencies` contains the BP's `header.uuid` (`4e9d8788-9f85-40e7-857e-cb4321546d5d`).
 
-When Minecraft activates one pack on a world, it automatically activates the other. This means the player only needs to add one of them and the engine pulls in the partner pack.
+When Minecraft applies an addon to a world, it uses these dependencies to ensure both packs are activated together.
 
 ### How texture mapping works
 
@@ -74,7 +74,7 @@ Without this entry the item would show its raw identifier as the display name.
 
 ## Installation (Windows 10/11)
 
-These steps install the packs as **development packs**, which lets you edit files and see changes without re-importing.
+**Prerequisites:** Minecraft Bedrock Edition **version 1.21.0 or later** must be installed and launched at least once (the first launch creates the `com.mojang` folder structure used below).
 
 1. **Clone or download this repository.**
 
@@ -96,13 +96,18 @@ These steps install the packs as **development packs**, which lets you edit file
    ...\development_resource_packs\resource_pack\manifest.json
    ```
 
+   > **Tip:** If you plan to iterate on the addon, create directory junctions instead of copying so edits in the repo are reflected immediately:
+   > ```
+   > mklink /J "%LOCALAPPDATA%\...\development_behavior_packs\behavior_pack" "C:\path\to\repo\behavior_pack"
+   > mklink /J "%LOCALAPPDATA%\...\development_resource_packs\resource_pack" "C:\path\to\repo\resource_pack"
+   > ```
+   > Otherwise you will need to re-copy after each change.
+
 4. **Launch Minecraft Bedrock Edition** (from the Microsoft Store / Xbox app).
 
-5. **Create a new world** (or edit an existing one). Go to **Add-Ons**, find both "Everything Addon" packs under the available list, and **activate** them. Because the packs are cross-linked, activating one should prompt you to activate the other.
+5. **Create a new world** (or edit an existing one). Turn on **Activate Cheats** (required for the `/give` command). Go to **Add-Ons**, find both "Everything Addon" packs under the available list, and **activate both** of them.
 
-6. **Enable cheats** on the world (required for the `/give` command).
-
-7. **Enter the world** and run:
+6. **Enter the world** and run:
    ```
    /give @s everything:custom_sword
    ```
@@ -120,7 +125,7 @@ After running the `/give` command, confirm the following:
 
 To distribute the addon as a single importable file, use the included packaging scripts.
 
-**Bash (macOS / Linux / Git Bash on Windows):**
+**Bash (macOS / Linux / Git Bash on Windows):** Requires the `zip` command (pre-installed on macOS/Linux; on Windows Git Bash you may need to install it or use the PowerShell script instead).
 ```bash
 ./package.sh                    # produces everything-addon.mcaddon
 ./package.sh my-custom-name     # produces my-custom-name.mcaddon
