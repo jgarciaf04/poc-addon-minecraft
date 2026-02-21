@@ -112,14 +112,51 @@ Without this entry the item would show its raw identifier as the display name.
    /give @s everything:custom_sword
    ```
 
-## Verification
+## Testing Runbook
 
-After running the `/give` command, confirm the following:
+Follow these checks after running `/give @s everything:custom_sword` in-game.
 
-- The item appears in your inventory with the display name **"Custom Sword"**.
-- The item shows the custom pixel-art sword texture (not a missing-texture placeholder).
-- The item renders like a sword when held (hand-equipped, angled in third person).
-- The item has a **damage value of 7** and **durability of 500** (visible in the item tooltip or tested by attacking mobs).
+### 1. Item granted successfully
+
+- **Expected:** The chat shows no error. The sword appears in your hotbar or inventory.
+- **Fail indicator:** Chat shows `Unknown item` or `Syntax error`. See Troubleshooting below.
+
+### 2. Display name
+
+- **Expected:** Hovering over the item shows **"Custom Sword"** (not `item.everything:custom_sword.name`).
+- **Fail indicator:** Raw identifier string means `en_US.lang` is missing or the resource pack is not active.
+
+### 3. Texture
+
+- **Expected:** The inventory icon shows a custom pixel-art sword (silver blade, brown handle).
+- **Fail indicator:** Purple-and-black checkerboard square means the texture chain is broken (icon shortname, `item_texture.json`, or the PNG file).
+
+### 4. Hand-equipped rendering
+
+- **Expected:** When held, the sword renders at an angle like vanilla swords (not flat like a regular item). Switch to third person (F5) to verify.
+- **Fail indicator:** Item renders flat/upright like a block or food item.
+
+### 5. Damage
+
+- **Expected:** Attack a mob (e.g., a cow in Creative Mode won't die, so switch to Survival or spawn a zombie). The sword should deal noticeably more damage than punching bare-handed (7 damage = 3.5 hearts).
+- **How to test:** Spawn a zombie (`/summon zombie`) and hit it. A zombie has 20 HP (10 hearts) and should die in 3 hits with a 7-damage sword.
+
+### 6. Durability
+
+- **Expected:** The sword has 500 durability. In Survival Mode, the durability bar appears after using it. It should not break after a few hits.
+- **How to test:** Switch to Survival (`/gamemode s`), attack mobs, and observe the durability bar decreasing slowly.
+
+### Troubleshooting
+
+| Symptom | Likely cause | Fix |
+|---------|-------------|-----|
+| `Unknown item` in chat | Behavior pack not active on the world | Go to world settings > Add-Ons and activate both packs |
+| Raw identifier as item name | Resource pack not active, or `en_US.lang` missing | Verify the resource pack is active and `texts/en_US.lang` exists |
+| Purple-black checkerboard texture | Texture shortname mismatch or missing PNG | Verify `minecraft:icon` shortname matches `item_texture.json` key, and `custom_sword.png` exists at the mapped path |
+| Item renders flat when held | `minecraft:hand_equipped` not set | Check that `custom_sword.json` has `"minecraft:hand_equipped": true` |
+| Packs don't appear in Add-Ons | Folder copied to wrong location, or `manifest.json` has errors | Verify the folder paths match exactly (see Installation steps 2-3). Open each `manifest.json` in a JSON validator |
+| Only one pack appears | Missing cross-link in `dependencies` | Each manifest must reference the other pack's `header.uuid` in its `dependencies` array |
+| `com.mojang` folder doesn't exist | Minecraft never launched | Launch Minecraft at least once, then check the path again |
 
 ## Packaging
 
