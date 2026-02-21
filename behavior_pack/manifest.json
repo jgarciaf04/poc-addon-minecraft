@@ -1,0 +1,23 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Everything Addon - Behavior Pack",
+    "description": "Behavior Pack for the Everything Addon custom sword POC",
+    "uuid": "4e9d8788-9f85-40e7-857e-cb4321546d5d",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "87207814-cff3-436f-be1b-ad539fe80446",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "b3a12422-a3b1-4919-acce-b0a858f90597",
+      "version": [1, 0, 0]
+    }
+  ]
+}

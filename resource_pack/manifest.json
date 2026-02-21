@@ -1,0 +1,23 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Everything Addon - Resource Pack",
+    "description": "Resource Pack for the Everything Addon custom sword POC",
+    "uuid": "b3a12422-a3b1-4919-acce-b0a858f90597",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "eaa449a9-9ecb-41ac-8cec-bbd830bf536e",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "4e9d8788-9f85-40e7-857e-cb4321546d5d",
+      "version": [1, 0, 0]
+    }
+  ]
+}
