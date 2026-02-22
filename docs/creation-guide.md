@@ -56,7 +56,7 @@ Patron documentado a partir de `custom_sword`.
 
 ## Item con Script
 
-Patron documentado a partir de `mega_sword`. Agrega scripting sobre la base de un item basico.
+Patron documentado a partir de `mega_sword`. Agrega scripting sobre la base de un item basico. Puede incluir componentes adicionales como `minecraft:glint` (efecto de encantamiento visual).
 
 ### Archivos Requeridos
 
@@ -89,7 +89,7 @@ Todos los del item basico, mas:
 
 ## Entidad
 
-Patron documentado a partir de la entidad shark. Una entidad completa requiere 10 archivos.
+Patron documentado a partir de la entidad shark. Una entidad completa requiere 10 archivos (9 nuevos y 1 modificado).
 
 ### Archivos Requeridos
 
