@@ -4,6 +4,9 @@
   "texture_data": {
     "custom_sword": {
       "textures": "textures/items/custom_sword"
+    },
+    "mega_sword": {
+      "textures": "textures/items/mega_sword"
     }
   }
 }
