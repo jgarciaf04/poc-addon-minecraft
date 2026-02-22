@@ -27,6 +27,9 @@
         "can_walk": false,
         "can_open_doors": false
       },
+      "minecraft:movement": {
+        "value": 0.12
+      },
       "minecraft:movement.sway": {
         "sway_amplitude": 0.0
       },

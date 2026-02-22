@@ -3,6 +3,9 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "everything:shark",
+      "materials": {
+        "default": "entity_alphatest"
+      },
       "textures": {
         "default": "textures/entity/shark"
       },
