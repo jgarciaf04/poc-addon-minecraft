@@ -1,0 +1,100 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.shark",
+        "texture_width": 128,
+        "texture_height": 64,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [0, 0.5, 0]
+      },
+      "bones": [
+        {
+          "name": "body",
+          "pivot": [0, 4, 0],
+          "cubes": [
+            {
+              "origin": [-6, 0, -8],
+              "size": [12, 10, 32],
+              "uv": [0, 0]
+            }
+          ]
+        },
+        {
+          "name": "head",
+          "parent": "body",
+          "pivot": [0, 4, -8],
+          "cubes": [
+            {
+              "origin": [-5, 1, -20],
+              "size": [10, 8, 12],
+              "uv": [0, 42]
+            }
+          ]
+        },
+        {
+          "name": "tail",
+          "parent": "body",
+          "pivot": [0, 4, 24],
+          "cubes": [
+            {
+              "origin": [-4, 1, 24],
+              "size": [8, 7, 16],
+              "uv": [56, 0]
+            }
+          ]
+        },
+        {
+          "name": "tail_fin",
+          "parent": "tail",
+          "pivot": [0, 5, 40],
+          "cubes": [
+            {
+              "origin": [-1, 0, 40],
+              "size": [2, 12, 8],
+              "uv": [88, 0]
+            }
+          ]
+        },
+        {
+          "name": "dorsal_fin",
+          "parent": "body",
+          "pivot": [0, 10, 4],
+          "cubes": [
+            {
+              "origin": [-1, 10, -1],
+              "size": [2, 8, 10],
+              "uv": [56, 23]
+            }
+          ]
+        },
+        {
+          "name": "left_pectoral_fin",
+          "parent": "body",
+          "pivot": [-6, 2, -2],
+          "cubes": [
+            {
+              "origin": [-16, 1, -5],
+              "size": [10, 2, 6],
+              "uv": [80, 20]
+            }
+          ]
+        },
+        {
+          "name": "right_pectoral_fin",
+          "parent": "body",
+          "pivot": [6, 2, -2],
+          "cubes": [
+            {
+              "origin": [6, 1, -5],
+              "size": [10, 2, 6],
+              "uv": [80, 28]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

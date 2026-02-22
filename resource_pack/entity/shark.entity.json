@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "everything:shark",
+      "textures": {
+        "default": "textures/entity/shark"
+      },
+      "geometry": {
+        "default": "geometry.shark"
+      },
+      "animations": {
+        "swim": "animation.shark.swim",
+        "attack": "animation.shark.attack"
+      },
+      "animation_controllers": [
+        {
+          "swim_controller": "controller.animation.shark"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.shark"
+      ],
+      "spawn_egg": {
+        "base_color": "#3a5f8a",
+        "overlay_color": "#f0f0f0"
+      }
+    }
+  }
+}

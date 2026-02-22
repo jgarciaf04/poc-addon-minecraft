@@ -1,2 +1,4 @@
 item.everything:custom_sword.name=Custom Sword
 item.everything:mega_sword.name=Mega Sword
+entity.everything:shark.name=Shark
+item.spawn_egg.entity.everything:shark.name=Shark Spawn Egg

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12.0",
+  "animation_controllers": {
+    "controller.animation.shark": {
+      "initial_state": "swimming",
+      "states": {
+        "swimming": {
+          "animations": ["swim"],
+          "transitions": [
+            {
+              "attacking": "query.is_attacking"
+            }
+          ]
+        },
+        "attacking": {
+          "animations": ["attack"],
+          "transitions": [
+            {
+              "swimming": "!query.is_attacking"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

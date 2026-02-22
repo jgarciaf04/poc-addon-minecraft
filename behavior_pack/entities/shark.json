@@ -1,0 +1,77 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "everything:shark",
+      "is_experimental": false,
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "components": {
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:attack": {
+        "damage": 4
+      },
+      "minecraft:follow_range": {
+        "value": 60
+      },
+      "minecraft:breathable": {
+        "breathes_water": true,
+        "breathes_air": false
+      },
+      "minecraft:navigation.generic": {
+        "can_swim": true,
+        "can_walk": false,
+        "can_open_doors": false
+      },
+      "minecraft:movement.sway": {
+        "sway_amplitude": 0.0
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.12
+      },
+      "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "width": 1.2,
+        "height": 0.8
+      },
+      "minecraft:type_family": {
+        "family": ["aquatic", "monster"]
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 60,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 60
+          }
+        ]
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1.2
+      },
+      "minecraft:behavior.random_swim": {
+        "priority": 6,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/shark.json"
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? math.random(5, 8) : 0"
+      }
+    }
+  }
+}
