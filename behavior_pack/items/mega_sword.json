@@ -21,7 +21,7 @@
         "max_durability": 9999
       },
       "minecraft:hand_equipped": true,
-      "minecraft:enchantment_glint_override": true
+      "minecraft:glint": true
     }
   }
 }
