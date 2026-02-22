@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "everything:mega_sword",
+      "menu_category": {
+        "category": "equipment",
+        "group": "itemGroup.name.sword"
+      }
+    },
+    "components": {
+      "minecraft:icon": {
+        "textures": {
+          "default": "mega_sword"
+        }
+      },
+      "minecraft:damage": {
+        "value": 25
+      },
+      "minecraft:durability": {
+        "max_durability": 9999
+      },
+      "minecraft:hand_equipped": true,
+      "minecraft:glint": true
+    }
+  }
+}
