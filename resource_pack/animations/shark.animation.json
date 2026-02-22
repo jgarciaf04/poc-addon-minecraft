@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.shark.swim": {
+      "loop": true,
+      "animation_length": 1.0,
+      "bones": {
+        "tail_fin": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.25": [0, 20, 0],
+            "0.5": [0, 0, 0],
+            "0.75": [0, -20, 0],
+            "1.0": [0, 0, 0]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.25": [0, 10, 0],
+            "0.5": [0, 0, 0],
+            "0.75": [0, -10, 0],
+            "1.0": [0, 0, 0]
+          }
+        }
+      }
+    },
+    "animation.shark.attack": {
+      "loop": false,
+      "animation_length": 0.5,
+      "bones": {
+        "head": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.15": [-20, 0, 0],
+            "0.3": [10, 0, 0],
+            "0.5": [0, 0, 0]
+          }
+        }
+      }
+    }
+  }
+}
