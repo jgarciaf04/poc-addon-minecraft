@@ -4,7 +4,7 @@
     "description": {
       "identifier": "everything:shark",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity"
       },
       "textures": {
         "default": "textures/entity/shark"
@@ -14,13 +14,14 @@
       },
       "animations": {
         "swim": "animation.shark.swim",
-        "attack": "animation.shark.attack"
+        "attack": "animation.shark.attack",
+        "swim_controller": "controller.animation.shark"
       },
-      "animation_controllers": [
-        {
-          "swim_controller": "controller.animation.shark"
-        }
-      ],
+      "scripts": {
+        "animate": [
+          "swim_controller"
+        ]
+      },
       "render_controllers": [
         "controller.render.shark"
       ],
